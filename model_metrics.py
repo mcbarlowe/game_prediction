@@ -33,7 +33,7 @@ def main():
     twitter = Twython(twitter_keys['Consumer Key'], twitter_keys['Consumer Secret Key'],
                       twitter_keys['Access Key'], twitter_keys['Access Secret Key'])
 
-    tweet_string = f'Game Prediction Model Metrics as of {date}\nAccuracy: {accuracy}\nLogloss {logloss}:\n'
+    tweet_string = f'Game Prediction Model Metrics as of {date}\nAccuracy: {accuracy}\nLogloss: {logloss}\n'
 
     twitter.update_status(status=tweet_string)
 
