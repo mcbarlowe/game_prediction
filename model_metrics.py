@@ -9,7 +9,7 @@ from prediction_model import get_twitter_keys
 
 def main():
 
-    date = datetime.datetime.now().strftime('%Y-%m-%d')
+    date = datetime.datetime.now().strftime('%m-%d-%Y')
     sql_string = 'select sched.game_id, predict.home_win_probs, predict.home_win_pred, sched.home_win from nhl_tables.predictions predict left join nhl_tables.nhl_schedule sched on predict.game_id = sched.game_id where sched.season=20182019 and sched.game_id > 2018020000;'
 
 
