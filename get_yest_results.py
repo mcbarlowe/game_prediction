@@ -111,11 +111,12 @@ def create_sched_df(pbp_dict, date):
     else:
         outcome.append(0)
 
-    if outcome[6] > outcome[9]:
+    if outcome[7] > outcome[11]:
         outcome.append(1)
     else:
         outcome.append(0)
 
+    print(outcome)
     return outcome
 
 def get_pbp(game_id):
