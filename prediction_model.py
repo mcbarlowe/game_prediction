@@ -453,9 +453,13 @@ def main():
 #plotting the distributions of the results from the monte carlo sim and saving
 #it to a file to tweet
         plt.figure()
-        sns.distplot(home_win_probabilities).set_title(f'Distribution of {home_results.team_abbrev.unique()[0]} vs. {away_results.team_abbrev.unique()[0]} on {date} with 95% CI')
-        plt.xlabel(f'{home_results.team_abbrev.unique()[0]} win probabilities')
-        plt.ylabel('Counts')
+        sns.distplot(home_win_probabilities).set_title((f'Distribution of {home_results.team_abbrev.unique()[0]} '
+                                                        f'vs. {away_results.team_abbrev.unique()[0]} on {date} '
+                                                        f'with 95% CI\n(La Distribution de {home_results.team_abbrev.unique()[0]} '
+                                                        f'contre {away_results.team_abbrev.unique()[0]} avec 95% '
+                                                        f'Intervalle de Confience)'))
+        plt.xlabel(f'{home_results.team_abbrev.unique()[0]} win probabilities (Probabilité de Gagner)')
+        plt.ylabel('Counts (Compte)')
         plt.axvline(final_win_probs + (statistics.stdev(home_win_probabilities) * 1.96))
         plt.axvline(final_win_probs - (statistics.stdev(home_win_probabilities) * 1.96))
         dist_plot_file_name = 'dist_plot.png'
